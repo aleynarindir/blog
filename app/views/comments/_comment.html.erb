@@ -1,0 +1,12 @@
+<%# app/views/comments/_comment.html.erb %>
+<% unless comment.archived? %>
+  <li>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+    
+    <strong>Comment:</strong>
+    <%= comment.body %>
+    
+    <%= link_to "Destroy Comment", [comment.article, comment], method: :delete, data: { confirm: "Are you sure?" } %>
+  </li>
+<% end %>
